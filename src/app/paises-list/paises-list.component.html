@@ -1,0 +1,6 @@
+<mat-grid-list cols="4" rowHeight="85px" *ngFor="let pais of paises.selCountries">
+  <mat-grid-tile>{{pais.name}}</mat-grid-tile>
+  <mat-grid-tile><img src="{{pais.flag}}"></mat-grid-tile>
+  <mat-grid-tile><button mat-raised-button color="primary" (click)="seleccionar(pais)">{{pais.alpha3Code}}</button></mat-grid-tile>
+  <mat-grid-tile>{{pais.capital}}</mat-grid-tile>
+</mat-grid-list>

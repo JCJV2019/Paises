@@ -1,0 +1,11 @@
+.selecciones {
+  display: inline-block;
+}
+
+.regionalBlocs {
+  width: 400px;
+}
+
+button {
+  margin: 10px;
+}
