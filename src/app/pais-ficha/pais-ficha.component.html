@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>{{pais.name}}</h1>
+<div mat-dialog-content>
+  <p>Propiedades</p>
+
+    <mat-label>Región: {{pais.region}}</mat-label>
+
+    <mat-label>Sub-región: {{pais.subregion}}</mat-label>
+
+    <mat-label>Población: {{pais.population | currency:' ':true:'.0-0' | milesPipe}}</mat-label>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancelar()">Volver</button>
+</div>
