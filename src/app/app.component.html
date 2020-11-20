@@ -1,40 +1,41 @@
 <h1>Paises</h1>
-<div class="selecciones">
-  <button mat-raised-button color="warn" (click)="seleccionarRegion()">Seleccionar</button>
-  <div class="selecciones">
-    <mat-form-field appearance="fill">
-      <mat-label>Regiones</mat-label>
-      <mat-select (selectionChange)="changeSelectR($event.value)">
-        <mat-option *ngFor="let reg of regiones" [value]="reg" default="Todas">
-          {{reg}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
+<div class="cuadroSelecciones">
 
-  <button mat-raised-button color="warn" (click)="seleccionarSubRegion()">Seleccionar</button>
-  <div class="selecciones">
-    <mat-form-field appearance="fill">
-      <mat-label>Subregiones</mat-label>
-      <mat-select (selectionChange)="changeSelectSR($event.value)">
-        <mat-option *ngFor="let subReg of subRegiones" [value]="subReg" default="">
-          {{subReg}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
+    <button mat-raised-button color="primary" (click)="seleccionarRegion()
+    ">Seleccionar</button>
+    <div class="seleccionesR">
+      <mat-form-field appearance="fill">
+        <mat-label>Regiones</mat-label>
+        <mat-select (selectionChange)="changeSelectR($event.value)">
+          <mat-option *ngFor="let reg of regiones" [value]="reg" default="Todas">
+            {{reg}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
-  <button mat-raised-button color="warn" (click)="seleccionarRegionalBloc()">Seleccionar</button>
-  <div class="selecciones">
-    <mat-form-field appearance="fill">
-      <mat-label>Regional Blocs</mat-label>
-      <mat-select class="regionalBlocs" (selectionChange)="changeSelectRB($event.value)">
-        <mat-option *ngFor="let regB of regionalBlocs" [value]="regB" default="Todas">
-          ({{regB.acronym}})  {{regB.name}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
+    <button mat-raised-button color="primary" (click)="seleccionarSubRegion()">Seleccionar</button>
+    <div class="seleccionesSR">
+      <mat-form-field appearance="fill">
+        <mat-label>Subregiones</mat-label>
+        <mat-select (selectionChange)="changeSelectSR($event.value)">
+          <mat-option *ngFor="let subReg of subRegiones" [value]="subReg" default="">
+            {{subReg}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
+    <button mat-raised-button color="primary" (click)="seleccionarRegionalBloc()">Seleccionar</button>
+    <div class="seleccionesRB">
+      <mat-form-field class="regionalBlocs" appearance="fill">
+        <mat-label>Regional Blocs</mat-label>
+        <mat-select (selectionChange)="changeSelectRB($event.value)">
+          <mat-option *ngFor="let regB of regionalBlocs" [value]="regB" default="Todas">
+            ({{regB.acronym}}) {{regB.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 </div>
 <app-paises-list (lasRegiones)=cargaRegiones($event) (losRegionalBlocs)=cargaRegionalBlocs($event)></app-paises-list>

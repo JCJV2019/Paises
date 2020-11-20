@@ -1,5 +1,10 @@
-.selecciones {
+.seleccionesR, .seleccionesSR, .seleccionesRB {
   display: inline-block;
+  width: auto;
+}
+
+.cuadroSelecciones {
+  background-color: black;
 }
 
 .regionalBlocs {
